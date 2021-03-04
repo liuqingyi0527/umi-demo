@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import styles from './index.less';
+import styles from '../index.less';
 export default class User extends Component {
   constructor(props: any) {
     super(props);

@@ -1,35 +1,37 @@
-import styles from './index.less';
-
-import React, { Component } from 'react'
+import React, { Component, lazy } from 'react'
+import { HashRouter as Router, Route, Redirect, Switch } from 'react-router-dom';
 import { history } from 'umi';
-import { Button } from 'antd'; // 引入antd组件
-import NavBarDom from "./metu";
-import TabBbar from  "./tabBar"
+import { TabBar } from 'antd-mobile';
+const House = lazy(() => import('./House'));
+const Profile = lazy(() => import('./Profiled'));
 
+import NavBarDom from "./test/metu";//头部组件样式
+import './index.css'//自己的样式
+// 字体图表样式
+import './../assets/fonts/iconfont.css'
+import tabBars from './../utils/tabbar_config';//tabbar的数据
+
+import Home from './Home';
 export default class Index extends Component {
-  // 路由跳转不带参数
-  toLogin() {
-    history.push('/user');
-  }
-  // 路由跳转带参数
-  toLoginWithParameter() {
-    history.push({
-      pathname: '/login',
-      query: {
-        a: 'b',
-      },
-    })
+  constructor(props: any) {
+    super(props);
+    this.state = {
+      selectedTab: history.location.pathname,
+    };
   }
   render() {
     return (
-      <div>
-        <NavBarDom/>
-      	<div className={styles.title}>首页</div>
-        <Button type="primary" onClick={this.toLogin}>跳转不带参数</Button>
-        <Button onClick={this.toLoginWithParameter}>跳转带参数</Button>
+      <Router>
+        <div>
+          <Switch>
+            <Route path="/home" component={Home} />
+            <Route path="/home/house" component={House} />
+            <Route path="/home/profile" component={Profile} />
+            <Route exact path="/" render={() => <Redirect to="/home" />} />
+          </Switch>
+        </div>
+      </Router>
 
-        <TabBbar/>
-      </div>
     )
   }
 }
