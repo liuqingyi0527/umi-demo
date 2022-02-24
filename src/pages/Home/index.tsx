@@ -44,12 +44,10 @@ export default class Index extends Component {
     return (
 
       <div>
-        homehomehomehomehomehomehomehomehomehomehomehomehomehomehomehomehomehomehomehomehomehome
-        {/* <NavBarDom /> */}
-        {/* <Route exact path="/home" component={HomeIn} />
-        <Route path="/home/house" component={House} />
-        <Route path="/home/profile" component={Profile} /> */}
-        {/* <div className="barBox">
+
+        <NavBarDom />
+        {/* <Route exact path="/home" component={HomeIn} /> */}
+        <div className="barBox">
           <TabBar
             unselectedTintColor="#949494"
             tintColor="#33A3F4"
@@ -61,7 +59,7 @@ export default class Index extends Component {
               this.renderTabBarItems()
             }
           </TabBar>
-        </div > */}
+        </div >
       </div>
     )
   }

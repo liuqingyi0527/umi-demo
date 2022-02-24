@@ -5,5 +5,8 @@ export default defineConfig({
     type: 'none',
   },
   routes: router,
+  history: {
+    type: 'hash'
+  },
   fastRefresh: {},
 });

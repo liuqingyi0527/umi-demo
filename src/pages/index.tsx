@@ -24,10 +24,8 @@ export default class Index extends Component {
       <Router>
         <div>
           <Switch>
-            <Route path="/home" component={Home} />
-            <Route path="/home/house" component={House} />
-            <Route path="/home/profile" component={Profile} />
             <Route exact path="/" render={() => <Redirect to="/home" />} />
+            <Route path="/home" component={Home} />
           </Switch>
         </div>
       </Router>

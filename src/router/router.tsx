@@ -1,7 +1,7 @@
 const router: any = [
   // { path: '/', component: '@/pages/index.tsx' },
-  // { path: '/user', component: '@/pages/test/user.tsx' },
-  // { path: '/home', component: '@/pages/Home/index.tsx' }
+  { path: '/user', component: '@/pages/test/user.tsx' },
+  { path: '/home', component: '@/pages/Home/index.tsx' },
   {
     path: '/',
     component: '@/layouts/index',
@@ -9,6 +9,7 @@ const router: any = [
     routes: [
       { path: '/home', component: '@/pages/Home/index.tsx' },
       { path: '/house', component: '@/pages/House/index.tsx' },
+      { path: '/table', component: '@/pages/Table/index.tsx' },
     ],
   },
 ]
